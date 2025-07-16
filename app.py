@@ -109,3 +109,10 @@ def album(id):
           'Title': fila['Title'],
           'url': url_for('album', id=id, _external=True)}
    return jsonify(res)
+
+@app.route("/api")
+def album_artista():
+   res = {
+          'artista': url_for('artistas',  _external=True),
+          'album': url_for('albums', _external=True)}
+   return jsonify(res)
